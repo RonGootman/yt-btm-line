@@ -1,0 +1,305 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "YouTube bottom line summary",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "source",
+    "main_thesis",
+    "key_insights",
+    "actionable_takeaways",
+    "evidence_and_examples",
+    "caveats_and_uncertainty"
+  ],
+  "properties": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "video_id",
+        "url",
+        "title",
+        "channel",
+        "video_language",
+        "published_at",
+        "transcript_language",
+        "transcript_type",
+        "extraction_method"
+      ],
+      "properties": {
+        "schema_version": {
+          "type": "string"
+        },
+        "video_id": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "channel": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "video_language": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "published_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "transcript_language": {
+          "type": "string"
+        },
+        "transcript_type": {
+          "type": "string"
+        },
+        "extraction_method": {
+          "type": "string"
+        }
+      }
+    },
+    "main_thesis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "attribution",
+        "citations"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "attribution": {
+          "enum": [
+            "creator_claim",
+            "ai_interpretation"
+          ]
+        },
+        "citations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "start",
+              "quote"
+            ],
+            "properties": {
+              "start": {
+                "type": "number",
+                "minimum": 0
+              },
+              "quote": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "key_insights": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "text",
+          "attribution",
+          "citations"
+        ],
+        "properties": {
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "attribution": {
+            "enum": [
+              "creator_claim",
+              "ai_interpretation"
+            ]
+          },
+          "citations": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "start",
+                "quote"
+              ],
+              "properties": {
+                "start": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "quote": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        }
+      },
+      "minItems": 3,
+      "maxItems": 7
+    },
+    "actionable_takeaways": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "text",
+          "attribution",
+          "citations"
+        ],
+        "properties": {
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "attribution": {
+            "enum": [
+              "creator_claim",
+              "ai_interpretation"
+            ]
+          },
+          "citations": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "start",
+                "quote"
+              ],
+              "properties": {
+                "start": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "quote": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "evidence_and_examples": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "text",
+          "attribution",
+          "citations"
+        ],
+        "properties": {
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "attribution": {
+            "enum": [
+              "creator_claim",
+              "ai_interpretation"
+            ]
+          },
+          "citations": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "start",
+                "quote"
+              ],
+              "properties": {
+                "start": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "quote": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "caveats_and_uncertainty": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "text",
+          "attribution",
+          "citations"
+        ],
+        "properties": {
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "attribution": {
+            "enum": [
+              "creator_claim",
+              "ai_interpretation"
+            ]
+          },
+          "citations": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "start",
+                "quote"
+              ],
+              "properties": {
+                "start": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "quote": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

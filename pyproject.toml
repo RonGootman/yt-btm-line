@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yt-btm-line"
+version = "0.1.0"
+description = "Timestamped YouTube captions for humans and AI assistants"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = ["youtube-transcript-api>=1.2,<2", "yt-dlp>=2025.1", "mcp>=1.20,<2", "jsonschema>=4.23,<5"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.9", "mypy>=1.14", "build>=1"]
+
+[project.scripts]
+yt-btm-line = "yt_btm_line.cli:main"
+yt-btm-line-mcp = "yt_btm_line.mcp_server:main"
+yt-btm-line-web = "yt_btm_line.web:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+[tool.setuptools.package-data]
+yt_btm_line = ["resources/*"]
+[tool.ruff]
+line-length = 100
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
+check_untyped_defs = true
